@@ -12,14 +12,14 @@ namespace CCWcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select CCService.svc or CCService.svc.cs at the Solution Explorer and start debugging.
     public class CCService : ICCService
     {
-        //private RegionsModelEntities _re;
+        //private RegionModelEntities _re;
         
         public bool create(Region region)
         {
             try
             {
                 Region r = new Region();
-                r.Id = region.Id;
+                r.ID = region.ID;
                 r.Name = region.Name;
                 r.Zipcodes = region.Zipcodes;
                
@@ -34,13 +34,13 @@ namespace CCWcfService
 
         public bool delete(Region region)
         {
-            using (RegionsModelEntities _re = new RegionsModelEntities())
+            using (RegionModelEntities _re = new RegionModelEntities())
             {
 
 
                 try
                 {
-                    Region r = _re.Regions.Single(reg => reg.Id == region.Id);
+                    Region r = _re.Regions.Single(reg => reg.ID == region.ID);
                     _re.Regions.Remove(r);
                     _re.SaveChanges();
                     return true;
@@ -55,13 +55,16 @@ namespace CCWcfService
 
         public Region find(string id)
         {
-            using (RegionsModelEntities _re = new RegionsModelEntities())
+            using (RegionModelEntities _re = new RegionModelEntities())
             {
-
-
-                return _re.Regions.Where(r => r.Id == id).Select(r => new Region
+                return _re.Regions.Where(r=> r.ID == id).Select(r=> new Regions
                 {
-                    Id = r.Id,
+                    z
+                })
+
+                return _re.Regions.Where(r => r.ID == id).Select(r => new Regions
+                {
+                    ID = r.ID,
                     Name = r.Name,
                     Zipcodes = r.Zipcodes
                 }).First();
@@ -69,11 +72,11 @@ namespace CCWcfService
         }
         public List<Region> FindAll()
         {
-            using (RegionsModelEntities _re = new RegionsModelEntities())
+            using (RegionModelEntities _re = new RegionModelEntities())
             {
               return  _re.Regions.Select(r => new Region
                 {
-                    Id = r.Id,
+                    ID = r.ID,
                     Name = r.Name,
                     Zipcodes = r.Zipcodes
 

@@ -13,10 +13,10 @@ namespace CCWcfService.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RegionEntities : DbContext
+    public partial class RegionModelEntities : DbContext
     {
-        public RegionEntities()
-            : base("name=RegionEntities")
+        public RegionModelEntities()
+            : base("name=RegionModelEntities")
         {
         }
     
@@ -25,5 +25,7 @@ namespace CCWcfService.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<ZipCode> ZipCodes { get; set; }
     }
 }

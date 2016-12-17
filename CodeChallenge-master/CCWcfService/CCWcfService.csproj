@@ -79,6 +79,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -100,15 +101,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CCService.svc" />
-    <Content Include="Model\RegionModel.Context.tt">
+    <Content Include="Model\RegionsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RegionModel.edmx</DependentUpon>
-      <LastGenOutput>RegionModel.Context.cs</LastGenOutput>
+      <DependentUpon>RegionsModel.edmx</DependentUpon>
+      <LastGenOutput>RegionsModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\RegionModel.tt">
+    <Content Include="Model\RegionsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RegionModel.edmx</DependentUpon>
-      <LastGenOutput>RegionModel.cs</LastGenOutput>
+      <DependentUpon>RegionsModel.edmx</DependentUpon>
+      <LastGenOutput>RegionsModel.cs</LastGenOutput>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -121,21 +122,27 @@
       <DependentUpon>CCService.svc</DependentUpon>
     </Compile>
     <Compile Include="ICCService.cs" />
-    <Compile Include="Model\Region.cs" />
-    <Compile Include="Model\RegionModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RegionModel.Context.tt</DependentUpon>
+    <Compile Include="Model\Region.cs">
+      <DependentUpon>RegionsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\RegionModel.cs">
+    <Compile Include="Model\Regions.cs" />
+    <Compile Include="Model\RegionsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RegionModel.tt</DependentUpon>
+      <DependentUpon>RegionsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\RegionModel.Designer.cs">
+    <Compile Include="Model\RegionsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RegionModel.edmx</DependentUpon>
+      <DependentUpon>RegionsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegionsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegionsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ZipCode.cs">
+      <DependentUpon>RegionsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ZipcodeGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,12 +155,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Model\RegionModel.edmx">
+    <EntityDeploy Include="Model\RegionsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RegionModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>RegionsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Model\RegionModel.edmx.diagram">
-      <DependentUpon>RegionModel.edmx</DependentUpon>
+    <Content Include="Model\RegionsModel.edmx.diagram">
+      <DependentUpon>RegionsModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,7 +183,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50911</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -12,10 +12,11 @@ namespace CCWcfService.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Region
+    public partial class ZipCode
     {
-        public string Name { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
+        public int iid { get; set; }
         public string ID { get; set; }
-        public string Zipcodes { get; set; }
     }
 }
