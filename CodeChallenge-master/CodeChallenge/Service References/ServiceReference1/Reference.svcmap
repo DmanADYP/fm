@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="90dc0158-4d5e-4ba7-ab18-15e5a039316f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60390/Service/ServiceRegions.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceRegions.xsd" MetadataType="Schema" ID="eb7bd802-72fd-4078-80ba-7a57888a7fac" SourceId="1" SourceUrl="http://localhost:60390/Service/ServiceRegions.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceRegions1.xsd" MetadataType="Schema" ID="1e47964b-f56f-458b-a491-c0f37d184840" SourceId="1" SourceUrl="http://localhost:60390/Service/ServiceRegions.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceRegions.disco" MetadataType="Disco" ID="dca000bc-44a8-462f-8e5b-a267aa4dd332" SourceId="1" SourceUrl="http://localhost:60390/Service/ServiceRegions.svc?disco" />
+    <MetadataFile FileName="ServiceRegions2.xsd" MetadataType="Schema" ID="5c34d043-b7b6-4cc6-9289-fe2657b1e34d" SourceId="1" SourceUrl="http://localhost:60390/Service/ServiceRegions.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceRegions.wsdl" MetadataType="Wsdl" ID="3abe21fd-f9c5-4894-ac5b-3c85456716a4" SourceId="1" SourceUrl="http://localhost:60390/Service/ServiceRegions.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

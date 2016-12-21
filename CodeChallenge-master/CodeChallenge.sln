@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 14 for Web
+# Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge", "CodeChallenge\CodeChallenge.csproj", "{548F9F36-F09A-43FE-9D2F-63A050FC88D9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059} = {FDB7F543-F4D5-47DB-A21B-6C2841CB3059}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge.Tests", "CodeChallenge.Tests\CodeChallenge.Tests.csproj", "{972E707A-6540-4F22-851C-02BB921E3D03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCWcfService", "CCWcfService\CCWcfService.csproj", "{EBC733F6-ECA4-4C45-8CA5-7C4BA5B5630F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceCC", "WcfServiceCC\WcfServiceCC.csproj", "{FDB7F543-F4D5-47DB-A21B-6C2841CB3059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegionApp", "RegionApp\RegionApp.csproj", "{2655ED7E-8301-4346-9259-20E3C067EF58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059} = {FDB7F543-F4D5-47DB-A21B-6C2841CB3059}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +31,14 @@ Global
 		{972E707A-6540-4F22-851C-02BB921E3D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{972E707A-6540-4F22-851C-02BB921E3D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{972E707A-6540-4F22-851C-02BB921E3D03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBC733F6-ECA4-4C45-8CA5-7C4BA5B5630F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBC733F6-ECA4-4C45-8CA5-7C4BA5B5630F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBC733F6-ECA4-4C45-8CA5-7C4BA5B5630F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBC733F6-ECA4-4C45-8CA5-7C4BA5B5630F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2655ED7E-8301-4346-9259-20E3C067EF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2655ED7E-8301-4346-9259-20E3C067EF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2655ED7E-8301-4346-9259-20E3C067EF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2655ED7E-8301-4346-9259-20E3C067EF58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

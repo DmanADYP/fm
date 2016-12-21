@@ -1,0 +1,32 @@
+﻿@model RegionApp.ModelView.RegionModelView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Region"))
+{
+    @Html.AntiForgeryToken()
+
+   
+
+    <div class="form-group">
+       
+        @Html.LabelFor(r => r.rm.Name)
+        @Html.TextBoxFor(r => r.rm.Name, new { @class = "form-control" })
+       <h2>Start</h2>
+        @Html.LabelFor(z=> z.zcp.Start)
+        @Html.DropDownListFor(z => z.zcp.Start, new SelectList(Model.lz,"ID","ZipCode"),"", new { @class = "form-control" })
+        <h2>End</h2>
+        @Html.LabelFor(z => z.zcp.End)
+        @Html.DropDownListFor(z => z.zcp.End, new SelectList(Model.lz, "ID", "ZipCode"), "", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save Region</button>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

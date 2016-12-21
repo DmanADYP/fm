@@ -11,7 +11,22 @@ namespace CodeChallenge.Api.Controllers
   {
     public string Get()
     {
-      return "Pong!";
+           string BASEURL = "http://localhost:60390/Service/ServiceRegions.svc/"; ;
+            try
+            {
+                var webClient = new WebClient();
+                var json = webClient.DownloadString(BASEURL + "findAll");
+                return "Pong!";
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+
+     
     }
   }
 }

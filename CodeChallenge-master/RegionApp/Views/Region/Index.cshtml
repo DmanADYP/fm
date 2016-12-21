@@ -1,0 +1,32 @@
+﻿@model RegionApp.ModelView.RegionModelView
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Regions</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Name</th>
+            <th>ZipCodes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.lrm)
+        {
+            <tr>
+                <td>@Html.ActionLink("Edit","Edit", new {id = item.ID})</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = item.ID })</td>
+                <td>@item.Name</td>
+                <td>@item.ZipCodes</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+
