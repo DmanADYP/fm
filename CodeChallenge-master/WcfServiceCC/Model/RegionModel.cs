@@ -9,7 +9,7 @@ namespace WcfServiceCC.Model
     {
         public string Name { get; set; }
         public string ID { get; set; }
-        public List<ZipCodeModel> Zipcodes { get; set; }
+        public List<ZipCodeModel> ZipCodes { get; set; }
         public string  Zip { get; set; }
     }
 }

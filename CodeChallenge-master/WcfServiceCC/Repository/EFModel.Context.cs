@@ -28,5 +28,6 @@ namespace WcfServiceCC.Repository
         public DbSet<Region> Regions { get; set; }
         public DbSet<ZipCode> ZipCodes { get; set; }
         public DbSet<Zip> Zips { get; set; }
+        public DbSet<RegionZipCode> RegionZipCodes { get; set; }
     }
 }

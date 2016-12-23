@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model RegionApp.ModelView.RegionModelView
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,26 +10,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Region", "Index", "Region", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Region")</li>
-                    <li>@Html.ActionLink("Create", "Create", "Region")</li>
-                    
-                </ul>
-               
-            </div>
-        </div>
-    </div>
+   @Html.Partial("_NavBar");
     <div class="container body-content">
         @RenderBody()
         <hr />

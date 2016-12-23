@@ -30,6 +30,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.rm.Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.rm.Name, "", new { @class = "text-danger" })
+                <h2>Start</h2>
+                
+                @Html.ValidationMessageFor(model => Model.lz, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(z => z.zcp.Start, new SelectList(Model.lz, "ZipCode", "ZipCode", ViewBag.Start), "", new { @class = "form-control" })
+                <h2>End</h2>
+
+                @Html.ValidationMessageFor(model => Model.lz, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(z => z.zcp.End, new SelectList(Model.lz, "ZipCode", "ZipCode",ViewBag.End), "", new { @class = "form-control" })
             </div>
         </div>
 

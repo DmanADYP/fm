@@ -11,6 +11,6 @@ namespace CodeChallenge.Data.Interfaces
   {
     Region Get(Guid regionId);
     void Add(Region region);
-    void Remove(Guid regionId);
+    void Remove(Guid regionId, Region region);
   }
 }

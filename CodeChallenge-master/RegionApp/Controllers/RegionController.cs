@@ -36,12 +36,15 @@ namespace RegionApp.Controllers
         {
 
             rmv.rm.ID = Guid.NewGuid().ToString();
+            rmv.rm.ZipCodes = new List<ZipCodeModel>();
+
+
+            rmv.rm.ZipCodes.Add(new ZipCodeModel
+            {
+                Start = rmv.zcp.Start,
+                End = rmv.zcp.End
+            });
            
-            //rmv.rm.ZipCodes.Add(new ZipCodeModel
-            //{
-            //    Start = rmv.zcp.Start,
-            //    End = rmv.zcp.End
-            //});
             _rc.create(rmv.rm);
             return RedirectToAction("Index");
         }
@@ -51,12 +54,23 @@ namespace RegionApp.Controllers
         {
            
             _rmv.rm = _rc.Find(id);
-     
+            _rmv.lz = _rc.ZipFindAll();
+            ViewBag.Start = _rmv.rm.ZipCodes[0].Start;
+            ViewBag.End = _rmv.rm.ZipCodes[0].End;
             return View("Edit", _rmv);
         }
         [HttpPost]
         public ActionResult Edit(RegionModelView rmv)
         {
+            rmv.rm.ZipCodes = new List<ZipCodeModel>();
+
+
+            rmv.rm.ZipCodes.Add(new ZipCodeModel
+            {
+                Start = rmv.zcp.Start,
+                End = rmv.zcp.End
+            });
+
             _rc.Edit(rmv.rm);
             return RedirectToAction("Index");
         }

@@ -21,17 +21,23 @@ namespace WcfServiceCC.Service
             {
                 try
                 {
-                    List<ZipCodeModel> x = new List<ZipCodeModel>();
-                    x.Add(new ZipCodeModel { Start = "xxxx", End = "xxxx" });
                     Region r = new Region();
+                    ZipCode z = new ZipCode();
 
                     r.ID = region.ID;
                     r.Name = region.Name;
-                    r.Zipcodes = string.Format("{0}-{1}", x[0].Start, x[0].End);
                    
-                    
+
+                    z.ID = region.ID;
+                    z.Start = region.ZipCodes[0].Start;
+                    z.End = region.ZipCodes[0].End;
+
                     re.Regions.Add(r);
                     re.SaveChanges();
+
+                    re.ZipCodes.Add(z);
+                    re.SaveChanges();
+
                     return true;
 
                 }
@@ -53,7 +59,9 @@ namespace WcfServiceCC.Service
                 {
                     
                     Region r = re.Regions.Single(reg => reg.ID == Region.ID);
+                    ZipCode z = re.ZipCodes.Single(zip => zip.ID == Region.ID);
                     re.Regions.Remove(r);
+                    re.ZipCodes.Remove(z);
                     re.SaveChanges();
                     return true;
                 }
@@ -71,13 +79,14 @@ namespace WcfServiceCC.Service
             {
                 try
                 {
-                    List<ZipCodeModel> x = new List<ZipCodeModel>();
-                    x.Add(new ZipCodeModel { Start = "", End = "" });
-                    Region r = re.Regions.Single(reg => reg.ID ==
-                    Region.ID);
+                    
+                    Region r = re.Regions.Single(reg => reg.ID == Region.ID);
                     r.ID = Region.ID;
                     r.Name = Region.Name;
-                    r.Zipcodes = string.Format("{0}-{1}", x[0].Start, x[0].End);
+                   
+                    ZipCode z = re.ZipCodes.Single(zip => zip.ID == Region.ID);
+                    z.Start = Region.ZipCodes[0].Start;
+                    z.End = Region.ZipCodes[0].End;
                     re.SaveChanges();
                     return true;
                 }
@@ -93,13 +102,13 @@ namespace WcfServiceCC.Service
         {
             using (RegionEntities re = new RegionEntities())
             {
-                List<ZipCodeModel> x = new List<ZipCodeModel>();
-                x.Add(new ZipCodeModel { Start = "", End = "" });
-                return re.Regions.Where(reg => reg.ID == id).Select(reg => new RegionModel
+                
+                return re.RegionZipCodes.Where(reg => reg.ID == id).Select(reg => new RegionModel
                 {
                     ID = reg.ID,
                     Name = reg.Name,
-                    Zipcodes = x
+                    ZipCodes = new List<ZipCodeModel> { new ZipCodeModel { Start = reg.Start, End = reg.End} }
+                    
 
                 }).FirstOrDefault();
             }
@@ -111,11 +120,11 @@ namespace WcfServiceCC.Service
             
             using (RegionEntities re = new RegionEntities())
             {
-                return re.Regions.Select(r => new RegionModel
+                return re.RegionZipCodes.Select(r => new RegionModel
                 {
                     ID = r.ID,
                     Name = r.Name,
-                   
+                    Zip =r.Start+"-"+r.End
                    
                 }).ToList();
 

@@ -72,7 +72,7 @@ namespace CodeChallenge.Tests
 
       Assert.NotNull(sut.Get(region.Id));
 
-      sut.Remove(region.Id);
+      sut.Remove(region.Id, region);
 
       Assert.Null(sut.Get(region.Id));
     }
@@ -81,10 +81,11 @@ namespace CodeChallenge.Tests
     public void Remove_RegionNotFound_ThrowsException()
     {
       Fixture fixture = new Fixture();
+            Region region = new Region();
       var sut = new RegionRepository();
       Guid regionId = fixture.Create<Guid>();
 
-      Assert.Throws(typeof(InvalidOperationException), () => sut.Remove(regionId));
+      Assert.Throws(typeof(InvalidOperationException), () => sut.Remove(regionId, region));
     }
   }
 }

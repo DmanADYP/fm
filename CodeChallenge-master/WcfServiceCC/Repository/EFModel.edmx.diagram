@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="RegionModel.Region" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RegionModel.ZipCode" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RegionModel.Zip" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="RegionModel.RegionZipCode" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

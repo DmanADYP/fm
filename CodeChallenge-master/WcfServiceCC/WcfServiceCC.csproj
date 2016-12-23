@@ -133,6 +133,9 @@
     <Compile Include="Repository\Region.cs">
       <DependentUpon>EFModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repository\RegionZipCode.cs">
+      <DependentUpon>EFModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repository\Zip.cs">
       <DependentUpon>EFModel.tt</DependentUpon>
     </Compile>

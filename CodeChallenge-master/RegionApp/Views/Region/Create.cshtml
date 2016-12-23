@@ -19,10 +19,10 @@
         @Html.TextBoxFor(r => r.rm.Name, new { @class = "form-control" })
        <h2>Start</h2>
         @Html.LabelFor(z=> z.zcp.Start)
-        @Html.DropDownListFor(z => z.zcp.Start, new SelectList(Model.lz,"ID","ZipCode"),"", new { @class = "form-control" })
+        @Html.DropDownListFor(z => z.zcp.Start, new SelectList(Model.lz, "ZipCode", "ZipCode"),"", new { @class = "form-control" })
         <h2>End</h2>
         @Html.LabelFor(z => z.zcp.End)
-        @Html.DropDownListFor(z => z.zcp.End, new SelectList(Model.lz, "ID", "ZipCode"), "", new { @class = "form-control" })
+        @Html.DropDownListFor(z => z.zcp.End, new SelectList(Model.lz, "ZipCode", "ZipCode"), "", new { @class = "form-control" })
     </div>
     <button type="submit" class="btn btn-primary">Save Region</button>
 }

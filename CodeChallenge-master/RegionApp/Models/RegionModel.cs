@@ -8,7 +8,7 @@ namespace RegionApp.Models
 {
     public class RegionModel
     {
-       
+
         [Required]
         [Key]
         [Display(Name = "ID")]
@@ -17,7 +17,17 @@ namespace RegionApp.Models
         [Display(Name = "Name")]
         public string Name { get; set; }
         [Required]
-        [Display(Name = "ZipCodes")]
+        [Display(Name = "Zipcodes")]
         public List<ZipCodeModel> ZipCodes { get; set; }
+        [Required]
+        [Display(Name = "Zipcodes")]
+        public string Zip { get; set; }
+        [Display(Name = "Start")]
+        public string Start { get; set; }
+        [Display(Name = "End")]
+        public string End { get; set; }
+
+
+
     }
 }

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegionApp", "RegionApp\Regi
 		{FDB7F543-F4D5-47DB-A21B-6C2841CB3059} = {FDB7F543-F4D5-47DB-A21B-6C2841CB3059}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delete", "Delete\Delete.csproj", "{7F6AF48F-E5FC-419F-8988-20CFF23C7B0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2655ED7E-8301-4346-9259-20E3C067EF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2655ED7E-8301-4346-9259-20E3C067EF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2655ED7E-8301-4346-9259-20E3C067EF58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6AF48F-E5FC-419F-8988-20CFF23C7B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6AF48F-E5FC-419F-8988-20CFF23C7B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6AF48F-E5FC-419F-8988-20CFF23C7B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6AF48F-E5FC-419F-8988-20CFF23C7B0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

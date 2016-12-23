@@ -29,10 +29,29 @@
           <Property Name="ZipCode" Type="varchar" MaxLength="50" />
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Region.dbo.RegionZipCodes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RegionZipCodes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Start" Type="varchar" MaxLength="255" />
+          <Property Name="End" Type="varchar" MaxLength="255" />
+          <Property Name="ID" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="RegionModelStoreContainer">
           <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZipCodes" EntityType="Self.ZipCodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zips" EntityType="Self.Zips" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegionZipCodes" EntityType="Self.RegionZipCodes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[RegionZipCodes].[Name] AS [Name], 
+[RegionZipCodes].[Start] AS [Start], 
+[RegionZipCodes].[End] AS [End], 
+[RegionZipCodes].[ID] AS [ID]
+FROM [dbo].[RegionZipCodes] AS [RegionZipCodes]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -59,6 +78,7 @@
           <EntitySet Name="Regions" EntityType="Self.Region" />
           <EntitySet Name="ZipCodes" EntityType="Self.ZipCode" />
           <EntitySet Name="Zips" EntityType="RegionModel.Zip" />
+          <EntitySet Name="RegionZipCodes" EntityType="RegionModel.RegionZipCode" />
         </EntityContainer>
         <EntityType Name="Zip">
           <Key>
@@ -66,6 +86,15 @@
           </Key>
           <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="RegionZipCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Start" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="End" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -97,6 +126,16 @@
               <MappingFragment StoreEntitySet="Zips">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionZipCodes">
+            <EntityTypeMapping TypeName="RegionModel.RegionZipCode">
+              <MappingFragment StoreEntitySet="RegionZipCodes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

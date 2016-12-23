@@ -11,7 +11,7 @@ namespace CodeChallenge.Api.Controllers
   {
     public string Get()
     {
-           string BASEURL = "http://localhost:60390/Service/ServiceRegions.svc/"; ;
+           string BASEURL = "http://localhost:60390/Service/ServiceRegions.svc/"; 
             try
             {
                 var webClient = new WebClient();
