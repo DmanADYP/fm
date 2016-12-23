@@ -11,7 +11,6 @@
           </Key>
           <Property Name="Name" Type="varchar" MaxLength="255" />
           <Property Name="ID" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Zipcodes" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="ZipCodes">
           <Key>
@@ -63,7 +62,6 @@ FROM [dbo].[RegionZipCodes] AS [RegionZipCodes]</DefiningQuery>
           </Key>
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Zipcodes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ZipCode">
           <Key>
@@ -107,7 +105,6 @@ FROM [dbo].[RegionZipCodes] AS [RegionZipCodes]</DefiningQuery>
               <MappingFragment StoreEntitySet="Regions">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Zipcodes" ColumnName="Zipcodes" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

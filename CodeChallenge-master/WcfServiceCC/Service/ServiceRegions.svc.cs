@@ -124,7 +124,7 @@ namespace WcfServiceCC.Service
                 {
                     ID = r.ID,
                     Name = r.Name,
-                    Zip =r.Start+"-"+r.End
+                    ZipCodes = new List<ZipCodeModel> { new ZipCodeModel { Start= r.Start, End = r.End} }
                    
                 }).ToList();
 

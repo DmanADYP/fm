@@ -22,6 +22,7 @@ namespace RegionApp.Controllers
         {
            
             _rmv.lrm = _rc.FindAll();
+           
             return View(_rmv);
         }
 

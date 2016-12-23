@@ -22,7 +22,7 @@
                 <td>@Html.ActionLink("Edit","Edit", new {id = item.ID})</td>
                 <td>@Html.ActionLink("Delete", "Delete", new { id = item.ID })</td>
                 <td>@item.Name</td>
-                <td>@item.Zip</td>
+                <td>@item.ZipCodes[0].Start - @item.ZipCodes[0].End</td>
             </tr>
 
         }
